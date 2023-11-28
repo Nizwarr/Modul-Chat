@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomLay"
+        android:layout_below="@+id/topLay"
+        android:layout_margin="@dimen/elevation_10" />
+
+    <RelativeLayout
+        android:id="@+id/topLay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarSize"
+        android:background="@color/teal_600">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/margin_32"
+            android:layout_height="@dimen/margin_32"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/width_5"
+            android:padding="@dimen/elevation_6"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_toRightOf="@id/backBtn"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_person"
+            android:layout_marginLeft="@dimen/elevation_6"/>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/user_image"
+            android:layout_marginLeft="@dimen/elevation_6"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Friends"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/elevation_16"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_more_vert"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/elevation_10"
+            android:rotationY="180"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLay"
+        android:layout_below="@id/topLay"
+        android:layout_marginStart="@dimen/elevation_10"
+        android:layout_marginTop="@dimen/elevation_10"
+        android:layout_marginEnd="@dimen/elevation_10"
+        android:layout_marginBottom="@dimen/elevation_10" />
+
+
+    <RelativeLayout
+        android:id="@+id/bottomLay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/width_5">
+
+        <EditText
+            android:id="@+id/enter_msg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_45"
+            android:layout_marginLeft="@dimen/elevation_16"
+            android:layout_marginRight="@dimen/elevation_10"
+            android:background="@drawable/curved_grey"
+            android:layout_centerVertical="true"
+            android:hint="Enter Message"
+            android:textColorHint="@color/black"
+            android:paddingLeft="@dimen/elevation_16"
+            android:drawableLeft="@drawable/ic_add_circle"
+            android:drawablePadding="@dimen/elevation_6"
+            android:layout_toLeftOf="@id/flot"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/flot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/elevation_10"
+            android:backgroundTint="@color/teal_600"
+            app:srcCompat="@drawable/ic_mic"
+            android:tint="@color/white"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
