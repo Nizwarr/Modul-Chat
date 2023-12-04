@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Modul Chat</string>
+    <string name="conversation_list">Conversation List</string>
+    <string name="app_logo">App Logo</string>
+    <string name="name_apps">Chat Apps</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="to_regitrastion">Don\'t have an account? Sign up</string>
 </resources>
