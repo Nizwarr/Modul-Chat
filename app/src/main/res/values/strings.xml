@@ -5,5 +5,17 @@
     <string name="name_apps">Chat Apps</string>
     <string name="username">Username</string>
     <string name="login">Login</string>
-    <string name="to_regitrastion">Don\'t have an account? Sign up</string>
+    <string name="to_registration">Don\'t have an account? Sign up</string>
+    <string name="backbutton">back button</string>
+    <string name="user">Your Friends</string>
+    <string name="online">Online</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="menu_button">menu button</string>
+    <string name="profile_image">profile image</string>
+    <string name="action_button">action button</string>
+    <string name="message1">Hello there!</string>
+    <string name="times1">12:34 PM</string>
+    <string name="received_message">This is a received message.</string>
+    <string name="sent_message">This is a sent message.</string>
+    <string name="register">Register</string>
 </resources>

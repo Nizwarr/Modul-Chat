@@ -3,19 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/background">
+    android:background="?android:attr/windowBackground">
 
     <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.Material3.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:theme="?attr/toolbarStyle"
         android:elevation="@dimen/elevation_6">
 
         <TextView
             android:id="@+id/conversationListLabel"
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/conversation_list"
@@ -24,7 +25,7 @@
             android:textColor="?attr/colorOnPrimary"
             android:layout_gravity="start|center_vertical"
             android:layout_marginStart="@dimen/margin_16"/>
-    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!-- Container untuk RecyclerView -->
     <FrameLayout

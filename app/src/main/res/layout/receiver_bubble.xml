@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/elevation_14"
-        android:text="This is a received message." />
+        android:text="@string/received_message" />
 
 </LinearLayout>
