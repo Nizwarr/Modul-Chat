@@ -6,7 +6,8 @@
     android:layout_gravity="end"
     android:background="@drawable/sender_bubble_background"
     android:elevation="@dimen/elevation_4"
-    android:padding="@dimen/elevation_12">
+    android:padding="@dimen/elevation_12"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/senderMessageText"
@@ -15,4 +16,11 @@
         android:textColor="@android:color/white"
         android:text="@string/sent_message" />
 
+    <TextView
+        android:id="@+id/chatTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/elevation_6"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/times2" />
 </LinearLayout>

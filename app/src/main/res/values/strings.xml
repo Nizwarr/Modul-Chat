@@ -18,4 +18,5 @@
     <string name="received_message">This is a received message.</string>
     <string name="sent_message">This is a sent message.</string>
     <string name="register">Register</string>
+    <string name="times2">12:45 PM</string>
 </resources>
