@@ -14,7 +14,7 @@ class ConversationListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_conversation_list)
 
         // Inisialisasi RecyclerView
-        val recyclerView = findViewById<RecyclerView>(R.id.conversationRecyclerView)
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_conversation)
 
         // Inisialisasi Layout Manager
         val layoutManager = LinearLayoutManager(this)
@@ -28,7 +28,7 @@ class ConversationListActivity : AppCompatActivity() {
         )
 
         // Buat adapter untuk RecyclerView
-        val adapter = ConversationListAdapter(conversations)
+        val adapter = ConversationListAdapter(this, conversations)
 
         // Atur adapter ke RecyclerView
         recyclerView.adapter = adapter

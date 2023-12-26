@@ -1,5 +1,6 @@
 package com.project.modulchat.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +9,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.modulchat.MainActivity
+import com.project.modulchat.ProfileActivity
 import com.project.modulchat.R
 import com.project.modulchat.data.Conversation
 
-class ConversationListAdapter(private val conversations: List<Conversation>) :
+class ConversationListAdapter(private val context: Context, private val conversations: List<Conversation>) :
     RecyclerView.Adapter<ConversationListAdapter.ConversationViewHolder>() {
 
     class ConversationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val usernameTextView: TextView = itemView.findViewById(R.id.username)
         val lastMessageTextView: TextView = itemView.findViewById(R.id.lastMessage)
-        val timestampTextView: TextView = itemView.findViewById(R.id.timestamp)
-        val container: View = itemView.findViewById(R.id.container)
         val profileImage: ImageView = itemView.findViewById(R.id.profileImage)
     }
 
@@ -32,16 +32,21 @@ class ConversationListAdapter(private val conversations: List<Conversation>) :
         val conversation = conversations[position]
         holder.usernameTextView.text = conversation.username
         holder.lastMessageTextView.text = conversation.lastMessage
-        holder.timestampTextView.text = conversation.timestamp
         holder.profileImage.setImageResource(R.drawable.ic_person) // Set image resource
 
-        // Tambahkan OnClickListener pada container
-        holder.container.setOnClickListener {
-            // Handle klik pada elemen daftar percakapan di sini
-            val intent = Intent(holder.container.context, MainActivity::class.java)
-            intent.putExtra("username", conversation.username)
-            intent.putExtra("lastMessage", conversation.lastMessage)
-            holder.container.context.startActivity(intent)
+        // OnClickListener untuk membuka profil
+        holder.profileImage.setOnClickListener {
+            val profileIntent = Intent(context, ProfileActivity::class.java)
+            profileIntent.putExtra("username", conversation.username)
+            context.startActivity(profileIntent)
+        }
+
+        // OnClickListener untuk membuka percakapan detail
+        holder.itemView.setOnClickListener {
+            val conversationIntent = Intent(context, MainActivity::class.java)
+            conversationIntent.putExtra("username", conversation.username)
+            conversationIntent.putExtra("lastMessage", conversation.lastMessage)
+            context.startActivity(conversationIntent)
         }
     }
 

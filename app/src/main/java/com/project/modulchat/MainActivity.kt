@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.modulchat.adapter.CustomAdapter
+import com.project.modulchat.adapter.ChatAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
         // Contoh data atau daftar data Anda yang akan ditampilkan dalam RecyclerView
-        val data = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+        val data = listOf("Halo, ini adalah text yang cukup panjang untuk ditampilkan", "Apakah sudah lumayan cukup?", "Atau kurang?", "Oke", "1")
 
         // Adapter untuk RecyclerView dengan menambahkan listener
-        val adapter = CustomAdapter(data)
+        val adapter = ChatAdapter(data)
 
         // Atur adapter ke RecyclerView
         recyclerView.adapter = adapter

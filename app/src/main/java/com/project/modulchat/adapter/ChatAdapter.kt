@@ -7,16 +7,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.modulchat.R
 
-class CustomAdapter(private val data: List<String>) :
-    RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+class ChatAdapter(private val data: List<String>) :
+    RecyclerView.Adapter<ChatAdapter.CustomViewHolder>() {
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val itemText: TextView = itemView.findViewById(R.id.itemText)
+        val itemText: TextView = itemView.findViewById(R.id.receiverMessageText)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_layout, parent, false)
+            .inflate(R.layout.item_chat, parent, false)
         return CustomViewHolder(itemView)
     }
 
@@ -29,4 +29,3 @@ class CustomAdapter(private val data: List<String>) :
         return data.size
     }
 }
-

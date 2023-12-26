@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/windowBackground">
@@ -27,47 +27,48 @@
             android:id="@+id/backBtn"
             android:layout_width="@dimen/margin_32"
             android:layout_height="@dimen/margin_32"
-            android:src="@drawable/ic_arrow_back"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/width_5"
+            android:contentDescription="@string/backbutton"
             android:padding="@dimen/elevation_6"
-            app:tint="@android:color/white"
-            android:contentDescription="@string/backbutton" />
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@android:color/white" />
 
         <!-- User image -->
         <ImageView
             android:id="@+id/user_image"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:layout_toEndOf="@id/backBtn"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_person"
             android:layout_marginStart="@dimen/elevation_6"
-            android:contentDescription="@string/profile_image" />
+            android:layout_toEndOf="@id/backBtn"
+            android:contentDescription="@string/profile_image"
+            android:src="@drawable/ic_person" />
 
         <!-- User information -->
         <LinearLayout
             android:id="@+id/linear"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/user_image"
-            android:layout_marginStart="@dimen/elevation_6"
             android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/elevation_6"
+            android:layout_toStartOf="@+id/more"
+            android:layout_toEndOf="@id/user_image"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/user"
-                android:textStyle="bold"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/elevation_16"
-                android:textColor="@android:color/white"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/online"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 
@@ -76,14 +77,14 @@
             android:id="@+id/more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_more_vert"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="@dimen/elevation_10"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/elevation_10"
+            android:layout_marginEnd="@dimen/elevation_10"
+            android:contentDescription="@string/menu_button"
             android:rotationY="180"
-            app:tint="@android:color/white"
-            android:contentDescription="@string/menu_button" />
+            app:srcCompat="@drawable/ic_more_vert"
+            app:tint="@android:color/white" />
 
     </RelativeLayout>
 
@@ -96,7 +97,8 @@
         android:layout_marginStart="@dimen/elevation_10"
         android:layout_marginTop="@dimen/elevation_10"
         android:layout_marginEnd="@dimen/elevation_10"
-        android:layout_marginBottom="@dimen/elevation_10" />
+        android:layout_marginBottom="@dimen/elevation_10"
+        tools:listitem="@layout/item_chat" />
 
     <!-- Bottom layout containing input field and FAB -->
     <RelativeLayout
@@ -112,18 +114,18 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_45"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/elevation_16"
             android:layout_marginEnd="@dimen/elevation_10"
+            android:layout_toStartOf="@id/flot"
+            android:autofillHints="username"
             android:background="@drawable/curved_grey"
-            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/ic_add_circle"
+            android:drawablePadding="@dimen/elevation_6"
             android:hint="@string/enter_message"
             android:inputType="text"
             android:paddingStart="@dimen/elevation_16"
-            android:paddingEnd="@dimen/elevation_10"
-            android:drawableStart="@drawable/ic_add_circle"
-            android:drawablePadding="@dimen/elevation_6"
-            android:layout_toStartOf="@id/flot"
-            android:autofillHints="username" />
+            android:paddingEnd="@dimen/elevation_10" />
 
         <!-- Floating Action Button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -133,9 +135,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/elevation_10"
-            android:tint="?attr/colorOnPrimary"
-            android:src="@drawable/ic_mic"
-            android:contentDescription="@string/action_button" />
+            android:contentDescription="@string/action_button"
+            android:src="@drawable/ic_send"
+            android:tint="?attr/colorOnPrimary" />
 
     </RelativeLayout>
 

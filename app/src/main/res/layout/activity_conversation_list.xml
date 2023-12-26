@@ -1,50 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/windowBackground">
+    tools:context=".ConversationListActivity">
 
-    <!-- Toolbar -->
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        style="@style/Widget.Material3.Toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="@dimen/elevation_6">
-
-        <TextView
-            android:id="@+id/conversationListLabel"
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/conversation_list"
-            android:textSize="@dimen/elevation_18"
-            android:textStyle="bold"
-            android:textColor="?attr/colorOnPrimary"
-            android:layout_gravity="start|center_vertical"
-            android:layout_marginStart="@dimen/margin_16"/>
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <!-- Container untuk RecyclerView -->
-    <FrameLayout
-        android:id="@+id/container"
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_conversation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="@dimen/marginTop_4"
-        android:layout_marginBottom="@dimen/elevation_10"
-        android:background="?attr/colorSurface">
+        android:padding="@dimen/elevation_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_conversation" />
 
-        <!-- RecyclerView -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/conversationRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="678dp"
-            android:padding="@dimen/elevation_10"
-            android:background="?attr/colorSurface"
-            style="?attr/recyclerViewStyle" />
-
-    </FrameLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

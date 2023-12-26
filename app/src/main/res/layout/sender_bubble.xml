@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="end"
-    android:background="@drawable/sender_bubble_background"
-    android:elevation="@dimen/elevation_4"
-    android:padding="@dimen/elevation_12"
-    android:orientation="vertical">
+    android:elevation="@dimen/elevation_4">
 
-    <TextView
-        android:id="@+id/senderMessageText"
+    <!-- Foto Profil -->
+    <ImageView
+        android:id="@+id/senderProfileImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_person"
+        android:scaleType="centerCrop"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:contentDescription="@string/profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Bubble Chat -->
+    <LinearLayout
+        android:id="@+id/senderBubbleLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:text="@string/sent_message" />
+        android:orientation="vertical"
+        android:background="@drawable/sender_bubble_background"
+        android:padding="@dimen/elevation_10"
+        app:layout_constraintEnd_toStartOf="@id/senderProfileImage"
+        app:layout_constraintTop_toTopOf="@id/senderProfileImage">
 
-    <TextView
-        android:id="@+id/chatTimestamp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/elevation_6"
-        android:textColor="@android:color/darker_gray"
-        android:text="@string/times2" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/senderMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="@string/sent_message" />
+
+        <TextView
+            android:id="@+id/senderChatTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/elevation_6"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/times2"
+            android:textSize="@dimen/elevation_10"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
