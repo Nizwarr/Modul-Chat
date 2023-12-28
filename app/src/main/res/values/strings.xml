@@ -51,7 +51,7 @@
     <string name="blank_edt_field_error">Please fill the required fields</string>
     <string name="error_hint">Fill here</string>
 
-    <string name="conversation_list">Conversation List</string>
+    <string name="conversation">Conversation</string>
     <string name="app_logo">App Logo</string>
     <string name="name_apps">Chat Apps</string>
     <string name="username">Username</string>
